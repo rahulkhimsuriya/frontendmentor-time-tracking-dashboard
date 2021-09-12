@@ -8,6 +8,7 @@ const theme = extendTheme({
     global: () => ({
       body: {
         fontFamily: "'Rubik', sans-serif",
+        backgroundColor: 'hsl(226, 43%, 10%)',
       },
     }),
   },
