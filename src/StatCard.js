@@ -36,6 +36,9 @@ const StatCard = ({ title, timeframe, statHeader }) => {
         paddingY="4"
         borderRadius="lg"
         backgroundColor="purple.900"
+        transition="ease-in-out"
+        transitionDuration="0.3s"
+        transitionProperty="all"
         _hover={{ backgroundColor: 'purple.800', cursor: 'pointer' }}
       >
         <Stat>
@@ -59,13 +62,23 @@ const StatCard = ({ title, timeframe, statHeader }) => {
             </Box>
           </Flex>
 
-          <StatNumber marginTop="2" fontSize="3xl" fontWeight="light">
-            {`${timeframe.current}hrs`}
-          </StatNumber>
+          <Flex
+            flexDir={{ base: 'row', lg: 'column' }}
+            alignItems={{ base: 'flex-end', lg: 'flex-start' }}
+            justifyContent={{ base: 'space-between', lg: 'flex-start' }}
+          >
+            <StatNumber
+              marginTop="2"
+              fontSize={{ base: 'x-large', lg: '3xl' }}
+              fontWeight="light"
+            >
+              {`${timeframe.current}hrs`}
+            </StatNumber>
 
-          <StatHelpText fontSize="small">
-            Last Week - {`${timeframe.previous}hrs`}
-          </StatHelpText>
+            <StatHelpText fontSize="small">
+              Last Week - {`${timeframe.previous}hrs`}
+            </StatHelpText>
+          </Flex>
         </Stat>
       </Box>
     </Box>
