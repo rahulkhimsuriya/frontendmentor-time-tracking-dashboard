@@ -41,7 +41,7 @@ const ProfileCard = () => {
 
             <Text
               lineHeight="shorter"
-              fontSize="3xl"
+              fontSize={{ base: '3xl', lg: '4xl' }}
               fontWeight="light"
               color="gray.100"
             >
