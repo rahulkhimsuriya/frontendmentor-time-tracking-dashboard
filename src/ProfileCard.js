@@ -3,23 +3,28 @@ import JeremyAvatar from './assets/images/image-jeremy.png'
 
 const ProfileCard = () => {
   return (
-    <Box position="relative" minHeight="full" minWidth="base">
+    <Box minHeight="full">
       <Box
         position="relative"
-        zIndex="dropdown"
+        zIndex="overlay"
         bgColor="purple.500"
         padding="6"
-        borderRadius="2xl"
+        paddingBottom={{ base: 6, lg: 10 }}
+        rounded="2xl"
       >
-        <Flex alignItems="center">
+        <Flex
+          flexDirection={{ base: 'row', lg: 'column' }}
+          alignItems={{ base: 'center', lg: 'flex-start' }}
+        >
           <Avatar
             src={JeremyAvatar}
             name="Jeremy Robson"
             border="2px"
             borderColor="gray.100"
+            boxSize="12"
           />
 
-          <Box marginLeft="6">
+          <Box marginLeft={{ base: 6, lg: 0 }} marginTop={{ base: 0, lg: 6 }}>
             <Text
               as="span"
               lineHeight="shorter"
@@ -28,9 +33,10 @@ const ProfileCard = () => {
             >
               Report for
             </Text>
+
             <Text
               lineHeight="shorter"
-              fontSize="2xl"
+              fontSize="3xl"
               fontWeight="light"
               color="gray.100"
             >
@@ -41,24 +47,25 @@ const ProfileCard = () => {
       </Box>
 
       <Box
-        position="absolute"
-        top="20"
+        marginTop="-6"
         width="full"
         backgroundColor="purple.900"
         paddingX="4"
-        paddingTop="10"
-        paddingBottom="4"
-        borderBottomRadius="2xl"
+        paddingTop="6"
+        paddingBottom="2"
+        rounded="2xl"
       >
         <Flex
           flex="1"
-          alignItems="center"
-          justifyContent="space-between"
+          flexDirection={{ base: 'row', lg: 'column' }}
+          alignItems={{ base: 'center', lg: 'flex-start' }}
+          justifyContent={{ base: 'space-between', lg: 'flex-start' }}
           paddingX="4"
         >
           <Box
             as="button"
-            fontSize="small"
+            marginTop="2"
+            fontSize={{ base: 'small', lg: 'medium' }}
             color="gray.400"
             outline="none"
             _hover={{ color: 'gray.200' }}
@@ -69,7 +76,8 @@ const ProfileCard = () => {
           </Box>
           <Box
             as="button"
-            fontSize="small"
+            marginTop="2"
+            fontSize={{ base: 'small', lg: 'medium' }}
             color="gray.400"
             outline="none"
             _hover={{ color: 'gray.200' }}
@@ -80,7 +88,8 @@ const ProfileCard = () => {
           </Box>
           <Box
             as="button"
-            fontSize="small"
+            marginTop="2"
+            fontSize={{ base: 'small', lg: 'medium' }}
             color="gray.400"
             outline="none"
             _hover={{ color: 'gray.200' }}

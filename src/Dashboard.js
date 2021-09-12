@@ -6,7 +6,7 @@ function Dashboard() {
   return (
     <Container
       marginY={{ base: 12, lg: 0 }}
-      maxWidth={{ base: 'sm', lg: 'container.lg' }}
+      maxWidth={{ base: 'sm', lg: 'container.xl' }}
       minHeight="100vh"
       display={{ lg: 'flex' }}
       alignItems="center"
@@ -14,10 +14,10 @@ function Dashboard() {
     >
       <Grid
         templateRows={{ base: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' }}
-        templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(5, 1fr)' }}
+        templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(4, 1fr)' }}
         gap={6}
       >
-        <GridItem rowSpan={{ base: 2, lg: 2 }} colSpan={{ lg: 2 }}>
+        <GridItem rowSpan={{ lg: 2 }}>
           <ProfileCard />
         </GridItem>
         {[1, 2, 3, 4, 5, 6].map((i) => (
