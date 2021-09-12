@@ -1,7 +1,12 @@
+import { useContext } from 'react'
 import { Avatar, Box, Flex, Text } from '@chakra-ui/react'
+import { TimeFrameContext } from './contexts/TimeFrameContext'
+import ProfileTimeframeButton from './ProfileTimeframeButton'
 import JeremyAvatar from './assets/images/image-jeremy.png'
 
 const ProfileCard = () => {
+  const { timeframes } = useContext(TimeFrameContext)
+
   return (
     <Box minHeight="full">
       <Box
@@ -62,42 +67,9 @@ const ProfileCard = () => {
           justifyContent={{ base: 'space-between', lg: 'flex-start' }}
           paddingX="4"
         >
-          <Box
-            as="button"
-            marginTop="2"
-            fontSize={{ base: 'small', lg: 'medium' }}
-            color="gray.400"
-            outline="none"
-            _hover={{ color: 'gray.200' }}
-            _focus={{ color: 'gray.200' }}
-            _active={{ color: 'gray.200' }}
-          >
-            Daily
-          </Box>
-          <Box
-            as="button"
-            marginTop="2"
-            fontSize={{ base: 'small', lg: 'medium' }}
-            color="gray.400"
-            outline="none"
-            _hover={{ color: 'gray.200' }}
-            _focus={{ color: 'gray.200' }}
-            _active={{ color: 'gray.200' }}
-          >
-            Weekly
-          </Box>
-          <Box
-            as="button"
-            marginTop="2"
-            fontSize={{ base: 'small', lg: 'medium' }}
-            color="gray.400"
-            outline="none"
-            _hover={{ color: 'gray.200' }}
-            _focus={{ color: 'gray.200' }}
-            _active={{ color: 'gray.200' }}
-          >
-            Monthly
-          </Box>
+          {timeframes.map((timeframe) => (
+            <ProfileTimeframeButton key={timeframe} timeframe={timeframe} />
+          ))}
         </Flex>
       </Box>
     </Box>

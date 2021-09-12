@@ -7,15 +7,13 @@ import {
   StatHelpText,
 } from '@chakra-ui/react'
 
-import WorkImage from './assets/icons/icon-work.svg'
-
-const StatCard = () => {
+const StatCard = ({ title, timeframe, statHeader }) => {
   return (
     <Box width="full" height="full" color="gray.200">
       <Box
         height="8"
         width="full"
-        backgroundColor="hsl(15, 100%, 70%)"
+        backgroundColor={statHeader.backgroundColor}
         roundedTop="lg"
       >
         <Flex
@@ -25,7 +23,7 @@ const StatCard = () => {
           paddingRight="4"
         >
           <Box height="auto" width="10">
-            <Image src={WorkImage} alt="work image" />
+            <Image src={statHeader.image} alt="work image" />
           </Box>
         </Flex>
       </Box>
@@ -41,7 +39,7 @@ const StatCard = () => {
       >
         <Stat>
           <Flex alignItems="center" justifyContent="space-between">
-            <StatLabel>Work</StatLabel>
+            <StatLabel>{title}</StatLabel>
 
             <Box as="span" color="gray.200" height="4" width="4">
               <svg
@@ -61,10 +59,12 @@ const StatCard = () => {
           </Flex>
 
           <StatNumber marginTop="2" fontSize="3xl" fontWeight="light">
-            32 hrs
+            {`${timeframe.current}hrs`}
           </StatNumber>
 
-          <StatHelpText fontSize="small">Last Week - 36hrs</StatHelpText>
+          <StatHelpText fontSize="small">
+            Last Week - {`${timeframe.previous}hrs`}
+          </StatHelpText>
         </Stat>
       </Box>
     </Box>
