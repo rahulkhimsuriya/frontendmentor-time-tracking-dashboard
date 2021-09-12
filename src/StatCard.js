@@ -68,7 +68,7 @@ const StatCard = ({ title, timeframe, statHeader }) => {
             justifyContent={{ base: 'space-between', lg: 'flex-start' }}
           >
             <StatNumber
-              marginTop="2"
+              marginTop="4"
               fontSize={{ base: 'x-large', lg: '3xl' }}
               fontWeight="light"
             >
