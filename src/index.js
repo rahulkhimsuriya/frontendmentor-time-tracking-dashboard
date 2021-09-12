@@ -14,7 +14,7 @@ const theme = extendTheme({
   },
   colors: {
     purple: {
-      800: 'hsl(235, 46%, 20%)',
+      800: 'hsl(235, 45%, 61%)',
       900: 'hsl(235, 46%, 20%)',
     },
   },

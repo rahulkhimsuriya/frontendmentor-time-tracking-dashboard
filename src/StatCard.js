@@ -36,6 +36,7 @@ const StatCard = ({ title, timeframe, statHeader }) => {
         paddingY="4"
         borderRadius="lg"
         backgroundColor="purple.900"
+        _hover={{ backgroundColor: 'purple.800', cursor: 'pointer' }}
       >
         <Stat>
           <Flex alignItems="center" justifyContent="space-between">
